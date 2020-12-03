@@ -136,7 +136,7 @@ var app = {
     array = JSON.parse(localStorage.getItem('lista-versiculos'));
     if (array) {
       for(var k=0; k < array.length; k++) {
-        if((array[k]['livro'] == livro) && (array[k]['num_capitulo'] == num_capitulo) && (array[k]['num_versiculo'] == num_versiculo)) {
+        if((array[k]['livro'].toLowerCase() == livro.toLowerCase()) && (array[k]['num_capitulo'] == num_capitulo) && (array[k]['num_versiculo'] == num_versiculo)) {
           return array[k]['cor'];
         }
       }   
