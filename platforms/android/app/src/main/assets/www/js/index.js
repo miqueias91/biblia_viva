@@ -16,6 +16,10 @@ localStorage.setItem("fonte-versiculo", fonte_versiculo);
 var modo_noturno = JSON.parse(localStorage.getItem('modo-noturno') || false);
 localStorage.setItem("modo-noturno", modo_noturno);
 
+if (!window.localStorage.getItem('lista-versiculos')) {
+  localStorage.setItem("lista-versiculos", '[]'); 
+}
+
 if (!window.localStorage.getItem('versao-biblia')) {
   localStorage.setItem("versao-biblia", 'viva'); 
 }
@@ -710,7 +714,7 @@ var app = {
     }
   },
   registraAcesso: function(pagina) {
-    if (window.localStorage.getItem('uid')) {
+   if (window.localStorage.getItem('uid')) {
       $.ajax({
         url: "https://www.innovatesoft.com.br/webservice/app/registraAcesso.php",
         dataType: 'json',
